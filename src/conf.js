@@ -10,6 +10,7 @@ export default {
     richHintsForKeystroke:    1,
     defaultSearchEngine:      "dd",
     theme,
+    scrollStepSize:           210
   },
 
   keys,
