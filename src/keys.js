@@ -23,6 +23,7 @@ const unmaps = {
     "af", ";s", "yp",
     "p",
     "<Ctrl-j>", "<Ctrl-h>",
+    "i",
   ],
   searchAliases: {
     s: ["g", "d", "b",
@@ -33,6 +34,7 @@ const unmaps = {
 const maps = {}
 
 maps.global = [
+  // mouseclick
   {
     alias:       "F",
     map:         "gf",
@@ -45,6 +47,7 @@ maps.global = [
     description: "Open link URL in vim editor",
     callback:    actions.previewLink,
   },
+  // scroll
   {
     alias:       "w",
     map:         "k",
@@ -58,13 +61,13 @@ maps.global = [
     description: "Scroll down",
   },
   {
-    alias:       "K",
+    alias:       "i",
     map:         "e",
     category:    categories.scroll,
     description: "Scroll half page up",
   },
   {
-    alias:       "J",
+    alias:       "k",
     map:         "d",
     category:    categories.scroll,
     description: "Scroll half page down",
@@ -75,11 +78,55 @@ maps.global = [
     description: "Scroll to element targeted by URL hash",
     callback:    actions.scrollToHash,
   },
+  // tabs
   {
-    alias:       "gi",
+    alias:       "j",
+    map:         "E",
+    category:    categories.tabs,
+    description: "previousTab",
+  },
+  {
+    alias:       "l",
+    map:         "R",
+    category:    categories.tabs,
+    description: "nextTab",
+  },
+  {
+    alias:       "'",
+    map:         "x",
+    category:    categories.tabs,
+    description: "closeTab",
+  },
+  {
+    alias:       "\"",
+    map:         "X",
+    category:    categories.tabs,
+    description: "restoreTab",
+  },
+  {
+    alias:       "<",
+    map:         "<<",
+    category:    categories.tabs,
+    description: "Move current tab to left",
+  },
+  {
+    alias:       ">",
+    map:         ">>",
+    category:    categories.tabs,
+    description: "Move current tab to right",
+  },
+  // pagenav
+  {
+    alias:       "u",
+    map:         "gu",
     category:    categories.pageNav,
-    description: "Edit current URL with vim editor",
-    callback:    actions.vimEditURL,
+    description: "Go up one path in the URL",
+  },
+  {
+    alias:       "U",
+    map:         "gU",
+    category:    categories.pageNav,
+    description: "Go to root of current URL hierarchy'",
   },
   {
     alias:       "gi",
@@ -104,6 +151,20 @@ maps.global = [
     },
   },
   {
+    alias:       ",",
+    map:         "S",
+    category:    categories.pageNav,
+    description: "Go back in history",
+  },
+  {
+    alias:       ".",
+    map:         "D",
+    category:    categories.pageNav,
+    description: "Go forward in history",
+  },
+
+  // clipboard
+  {
     alias:       "yp",
     category:    categories.clipboard,
     description: "Copy URL path of current page",
@@ -127,6 +188,7 @@ maps.global = [
     description: "Copy page URL/Title as Markdown link",
     callback:    () => Clipboard.write(actions.getMarkdownLink()),
   },
+  // another tabs
   {
     alias:       "yT",
     category:    categories.tabs,
@@ -146,17 +208,8 @@ maps.global = [
   //   description: "Paste tab",
   //   callback:    () => actions.pasteTab(),
   // },
-  {
-    alias:       ";se",
-    category:    categories.settings,
-    description: "Edit Settings",
-    callback:    actions.editSettings,
-  },
-  {
-    alias:       "gS",
-    category:    categories.chromeURLs,
-    description: "Open Chrome settings",
-  },
+
+  // misc
   {
     alias:       "=W",
     category:    categories.misc,
@@ -223,6 +276,7 @@ maps.global = [
     description: "Toggle PDF viewer from SurfingKeys",
     callback:    actions.togglePdfViewer,
   },
+  // more tabs
   {
     alias:       "gxE",
     map:         "gxt",
@@ -235,6 +289,7 @@ maps.global = [
     category:    categories.tabs,
     description: "Close tab to right",
   },
+  // more clipboard
   {
     alias:       "\\cgh",
     category:    categories.clipboard,
@@ -245,12 +300,14 @@ maps.global = [
       actions.openLink(url, { newTab: true })
     },
   },
+  // more mouseclick
   {
     alias:       "F",
     map:         "gf",
     category:    categories.mouseClick,
     description: "Open a link in non-active new tab",
   },
+  // omnibar
   {
     alias:       "oh",
     category:    categories.omnibar,
