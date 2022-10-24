@@ -92,7 +92,7 @@ maps.global = [
     description: "nextTab",
   },
   {
-    alias:       "'",
+    alias:       ":",
     map:         "x",
     category:    categories.tabs,
     description: "closeTab",
@@ -278,13 +278,13 @@ maps.global = [
   },
   // more tabs
   {
-    alias:       "gxE",
+    alias:       "h",
     map:         "gxt",
     category:    categories.tabs,
     description: "Close tab to left",
   },
   {
-    alias:       "gxR",
+    alias:       "'",
     map:         "gxT",
     category:    categories.tabs,
     description: "Close tab to right",
