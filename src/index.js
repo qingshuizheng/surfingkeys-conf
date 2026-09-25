@@ -92,8 +92,28 @@ const registerSearchEngines = (searchEngines, searchleader) =>
     )
   })
 
+const injectCSS = (css) => {
+  const style = document.createElement("style")
+  style.textContent = css
+  document.head.appendChild(style)
+}
+
 const main = async () => {
   window.surfingKeys = api
+  injectCSS(`
+    div.surfingkeys_match_mark {
+      background-color: rgba(140, 255, 0, 0.45) !important;
+      color: inherit !important;
+      opacity: 1 !important;
+      mix-blend-mode: multiply;
+    }
+    div.surfingkeys_selection_mark {
+      background-color: rgba(66, 165, 245, 0.4) !important;
+      color: inherit !important;
+      opacity: 1 !important;
+      mix-blend-mode: multiply;
+    }
+  `)
   if (conf.settings) {
     Object.assign(
       settings,
