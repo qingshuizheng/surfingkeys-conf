@@ -66,10 +66,10 @@ util.until = (check, test = (a) => a, maxAttempts = 50, interval = 50) =>
   })
 
 const localStorageFns = () => {
-  if (typeof browser !== "undefined") {
-    return [browser.storage.local.get, browser.storage.local.set]
+  if (typeof browser !== "undefined" && browser.storage && browser.storage.local) {
+    return [browser.storage.local.get.bind(browser.storage.local), browser.storage.local.set.bind(browser.storage.local)]
   }
-  if (typeof chrome !== "undefined" && chrome.storage) {
+  if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
     return [chrome.storage.local.get, chrome.storage.local.set].map((fn) =>
       util.promisify(fn.bind(chrome.storage.local))
     )

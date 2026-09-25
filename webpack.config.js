@@ -1,7 +1,18 @@
+import path from "path"
+import { fileURLToPath } from "url"
 import TerserPlugin from "terser-webpack-plugin"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default {
   mode: "production",
+  entry: path.resolve(__dirname, "src/index.js"),
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "surfingkeys.js",
+    clean: true,
+  },
+  devtool: false,
   module: {
     rules: [
       {
@@ -12,7 +23,6 @@ export default {
   },
   optimization: {
     // Disable terser's default behavior of creating a separate surfingkeys.js.LICENSE.txt file
-    // because this trips up our gulpfile
     minimizer: [
       new TerserPlugin({
         extractComments: false,

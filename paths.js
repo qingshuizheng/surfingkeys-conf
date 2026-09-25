@@ -1,18 +1,32 @@
+import os from "os"
 import path from "path"
 import { fileURLToPath } from "url"
-import platforms from "platform-folders"
+
+// Cross-platform config-home resolution, matching the previous platform-folders
+// getConfigHome() behavior without a native addon:
+//   - Windows: %APPDATA% (Roaming)
+//   - macOS:   ~/Library/Application Support
+//   - Linux:   $XDG_CONFIG_HOME or ~/.config
+function getConfigHome() {
+  if (process.platform === "win32") {
+    return process.env.APPDATA || path.join(os.homedir(), "AppData", "Roaming")
+  }
+  if (process.platform === "darwin") {
+    return path.join(os.homedir(), "Library", "Application Support")
+  }
+  return process.env.XDG_CONFIG_HOME || path.join(os.homedir(), ".config")
+}
 
 const gulpfilePath = fileURLToPath(import.meta.url)
 
 const paths = {
   assets: "assets",
   buildDir: "build/",
-  confPrivExample: "conf.priv.example.js",
+  confPrivExample: "src/conf.priv.example.js",
   dirname: path.dirname(gulpfilePath),
   favicons: "assets/favicons",
   faviconsManifest: "favicons.json",
-  gulpfile: path.basename(gulpfilePath),
-  installDir: platforms.getConfigHome(),
+  installDir: getConfigHome(),
   srcDir: "src",
   output: "surfingkeys.js",
   pkgJson: "package.json",

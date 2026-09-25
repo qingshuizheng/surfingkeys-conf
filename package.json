@@ -6,10 +6,18 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "npm exec gulp --",
-    "lint": "eslint src gulpfile.js webpack.config.js",
-    "build": "npm run gulp build",
-    "watch": "npm run gulp watch"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "clean": "node scripts/clean.mjs",
+    "check-priv": "node scripts/check-priv.mjs",
+    "install": "npm run build && node scripts/install.mjs",
+    "docs": "node scripts/docs.mjs",
+    "favicons": "node scripts/favicons.mjs",
+    "docs-full": "npm run favicons && npm run docs",
+    "dist": "npm run check-priv && npm run clean && npm run build && npm run docs-full",
+    "serve": "node server/index.js",
+    "dev": "node scripts/dev.mjs",
+    "lint": "eslint src webpack.config.js scripts/"
   },
   "repository": {
     "type": "git",
@@ -29,22 +37,14 @@
     "uhtml": "^3.1.0"
   },
   "devDependencies": {
-    "del": "^7.0.0",
     "eslint": "8.27.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "express": "^4.18.2",
-    "gulp": "^4.0.2",
-    "gulp-file": "^0.4.0",
-    "gulp-notify": "^4.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.1.3",
-    "node-fetch": "^3.3.0",
-    "platform-folders": "^0.6.0",
-    "to-string-loader": "^1.2.0",
+    "terser-webpack-plugin": "^5.3.6",
     "unicode": "^14.0.0",
     "webpack": "^5.75.0",
-    "webpack-stream": "^7.0.0"
+    "webpack-cli": "^7.2.3"
   },
   "peerDependencies": {
     "object-assign": "^4.1.1"

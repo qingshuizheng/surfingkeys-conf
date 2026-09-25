@@ -81,10 +81,10 @@ _Coming soon!_
     $ npm install
     ```
 
-3.  **Gulp Build/Install**
+3.  **Build/Install**
 
     ```shell
-    $ npm run gulp install # OR "npm run gulp build" to build to ./build/surfingkeys.js without installing
+    $ npm run install # OR "npm run build" to build to ./build/surfingkeys.js without installing
     ```
 
     This will build the final configuration file and place it at `~/.config/surfingkeys.js`.
@@ -133,7 +133,7 @@ _Coming soon!_
       If you run Linux with systemd, an [example user service](./extra/surfingkeys-conf.service) is provided in this repo. You will need to modify
       it to contain the proper path to your `surfingkeys-conf` repo.
 
-    - **V.** Repeat the `npm run gulp build` command from step 4 above after you make any changes to your configuration files.
+    - **V.** Repeat the `npm run build` command from step 3 above after you make any changes to your configuration files.
       Your new configuration will be automatically loaded by the web server and SurfingKeys will pick it up the next time you load a webpage.
 
     </details></blockquote>
@@ -141,7 +141,7 @@ _Coming soon!_
     <details>
     <summary><strong>Option B</strong>: Manually copy/paste into the SurfingKeys configuration form</summary>
 
-    - **I.** Copy the contents of `./build/surfingkeys.js` (or `$HOME/.config/surfingkeys.js` if you ran `gulp install`)
+    - **I.** Copy the contents of `./build/surfingkeys.js` (or the file installed by `npm run install`)
 
     - **II.** Paste the contents into the SurfingKeys configuration page:
 
@@ -183,10 +183,10 @@ This project provides a local web server which:
 To run the local web server, follow steps 1-3 in the [installation instructions above](#procedure), then run:
 
 ```shell
-$ gulp serve-simple
+$ npm run serve
 ```
 
-Alternatively, you can use the `gulp serve` task, which also automatically rebuilds the configuration file whenever a source file is modified.
+Alternatively, you can run `npm run dev`, which also automatically rebuilds the configuration file whenever a source file is modified.
 
 If you wish to use the local web server, you will likely want it to start automatically with your PC.
 If you run Linux with systemd, an [example user service](./extra/surfingkeys-conf.service) is provided for this purpose.
