@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [265 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [279 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -26,10 +26,13 @@ It includes:
 <tr><th colspan="2"><strong>global</strong></th></tr><tr><td><strong>Mapping</strong></td><td><strong>Description</strong></td></tr>
 <tr><td><code>F</code></td><td>Open a link in non-active new tab</td></tr>
 <tr><td><code>zf</code></td><td>Open link URL in vim editor</td></tr>
-<tr><td><code>w</code></td><td>Scroll up</td></tr>
+<tr><td><code>i</code></td><td>Scroll up</td></tr>
+<tr><td><code>k</code></td><td>Scroll down</td></tr>
+<tr><td><code>I</code></td><td>Scroll half page up</td></tr>
 <tr><td><code>s</code></td><td>Scroll down</td></tr>
-<tr><td><code>K</code></td><td>Scroll half page up</td></tr>
-<tr><td><code>J</code></td><td>Scroll half page down</td></tr>
+<tr><td><code>K</code></td><td>Scroll half page down</td></tr>
+<tr><td><code>j</code></td><td>Go to previous tab</td></tr>
+<tr><td><code>l</code></td><td>Go to next tab</td></tr>
 <tr><td><code>gh</code></td><td>Scroll to element targeted by URL hash</td></tr>
 <tr><td><code>gi</code></td><td>Edit current URL with vim editor</td></tr>
 <tr><td><code>gI</code></td><td>View image in new tab</td></tr>
@@ -53,8 +56,19 @@ It includes:
 <tr><td><code>&#x3D;bw</code></td><td>Show BuiltWith report for page</td></tr>
 <tr><td><code>&#x3D;wa</code></td><td>Show Wappalyzer report for page</td></tr>
 <tr><td><code>;pd</code></td><td>Toggle PDF viewer from SurfingKeys</td></tr>
-<tr><td><code>gxE</code></td><td>Close tab to left</td></tr>
-<tr><td><code>gxR</code></td><td>Close tab to right</td></tr>
+<tr><td><code>h</code></td><td>Close tab to left</td></tr>
+<tr><td><code>H</code></td><td>Restore last closed tab</td></tr>
+<tr><td><code>J</code></td><td>Move current tab left</td></tr>
+<tr><td><code>L</code></td><td>Move current tab right</td></tr>
+<tr><td><code>&#39;</code></td><td>Close tab to right</td></tr>
+<tr><td><code>&quot;</code></td><td>Restore last closed tab</td></tr>
+<tr><td><code>?</code></td><td>Show usage</td></tr>
+<tr><td><code>u</code></td><td>Zoom out</td></tr>
+<tr><td><code>o</code></td><td>Zoom in</td></tr>
+<tr><td><code>,</code></td><td>Go back in history</td></tr>
+<tr><td><code>.</code></td><td>Go forward in history</td></tr>
+<tr><td><code>gl</code></td><td>Go to last used tab</td></tr>
+<tr><td><code>gu</code></td><td>Go up one level in URL</td></tr>
 <tr><td><code>\cgh</code></td><td>Open clipboard string as GitHub path (e.g. 'torvalds/linux')</td></tr>
 <tr><td><code>F</code></td><td>Open a link in non-active new tab</td></tr>
 <tr><td><code>oh</code></td><td>Open URL from history</td></tr>

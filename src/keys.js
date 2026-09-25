@@ -6,7 +6,7 @@ import util from "./util.js"
 
 const { categories } = help
 
-const { Clipboard, Front, Hints } = api
+const { Clipboard, Front, Hints, Normal, RUNTIME } = api
 
 // Remove undesired default mappings
 const unmaps = {
@@ -62,28 +62,46 @@ maps.global = [
     callback: actions.previewLink,
   },
   {
-    alias: "w",
-    map: "k",
+    alias: "i",
+    callback: () => Normal.scroll("up"),
     category: categories.scroll,
     description: "Scroll up",
   },
   {
-    alias: "s",
-    map: "j",
+    alias: "k",
+    callback: () => Normal.scroll("down"),
     category: categories.scroll,
     description: "Scroll down",
   },
   {
-    alias: "K",
+    alias: "I",
     map: "e",
     category: categories.scroll,
     description: "Scroll half page up",
   },
   {
-    alias: "J",
+    alias: "s",
+    callback: () => Normal.scroll("down"),
+    category: categories.scroll,
+    description: "Scroll down",
+  },
+  {
+    alias: "K",
     map: "d",
     category: categories.scroll,
     description: "Scroll half page down",
+  },
+  {
+    alias: "j",
+    map: "E",
+    category: categories.tabs,
+    description: "Go to previous tab",
+  },
+  {
+    alias: "l",
+    map: "R",
+    category: categories.tabs,
+    description: "Go to next tab",
   },
   {
     alias: "gh",
@@ -252,16 +270,88 @@ maps.global = [
     callback: actions.togglePdfViewer,
   },
   {
-    alias: "gxE",
+    alias: "h",
     map: "gxt",
     category: categories.tabs,
     description: "Close tab to left",
   },
   {
-    alias: "gxR",
+    alias: "H",
+    map: "X",
+    category: categories.tabs,
+    description: "Restore last closed tab",
+  },
+  {
+    alias: "J",
+    callback: () => RUNTIME("moveTab", { step: -1 }),
+    category: categories.tabs,
+    description: "Move current tab left",
+  },
+  {
+    alias: "L",
+    callback: () => RUNTIME("moveTab", { step: 1 }),
+    category: categories.tabs,
+    description: "Move current tab right",
+  },
+  {
+    alias: "'",
     map: "gxT",
     category: categories.tabs,
     description: "Close tab to right",
+  },
+  {
+    alias: '"',
+    map: "X",
+    category: categories.tabs,
+    description: "Restore last closed tab",
+  },
+  {
+    alias: "?",
+    category: categories.help,
+    description: "Show usage",
+    callback: () => Front.showUsage(),
+  },
+  {
+    alias: "u",
+    map: "zo",
+    category: categories.misc,
+    description: "Zoom out",
+  },
+  {
+    alias: "o",
+    map: "zi",
+    category: categories.misc,
+    description: "Zoom in",
+  },
+  {
+    alias: ",",
+    map: "S",
+    category: categories.tabs,
+    description: "Go back in history",
+  },
+  {
+    alias: ".",
+    map: "D",
+    category: categories.tabs,
+    description: "Go forward in history",
+  },
+  {
+    alias: "gl",
+    map: "gT",
+    category: categories.tabs,
+    description: "Go to last used tab",
+  },
+  {
+    alias: "gu",
+    category: categories.pageNav,
+    description: "Go up one level in URL",
+    callback: () => {
+      const url = new URL(window.location.href)
+      const parts = url.pathname.split("/").filter(Boolean)
+      parts.pop()
+      url.pathname = parts.join("/") + "/"
+      window.location.href = url.origin + url.pathname
+    },
   },
   {
     alias: "\\cgh",
