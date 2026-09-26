@@ -1,0 +1,27 @@
+name: Build and release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: "echo 'export default { keys: {}, doi_handler: (d) => d }' > src/conf.priv.js"
+      - run: npm install --ignore-scripts
+      - run: npm run build
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest build
+          files: build/surfingkeys.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
