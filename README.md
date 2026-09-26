@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [279 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [282 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -63,6 +63,9 @@ It includes:
 <tr><td><code>&#39;</code></td><td>Close tab to right</td></tr>
 <tr><td><code>&quot;</code></td><td>Restore last closed tab</td></tr>
 <tr><td><code>?</code></td><td>Show usage</td></tr>
+<tr><td><code>;pp</code></td><td>Pin/unpin current tab</td></tr>
+<tr><td><code>n</code></td><td>Next page</td></tr>
+<tr><td><code>N</code></td><td>Previous page</td></tr>
 <tr><td><code>u</code></td><td>Zoom out</td></tr>
 <tr><td><code>o</code></td><td>Zoom in</td></tr>
 <tr><td><code>,</code></td><td>Go back in history</td></tr>

@@ -312,6 +312,24 @@ maps.global = [
     callback: () => Front.showUsage(),
   },
   {
+    alias: ";pp",
+    callback: () => RUNTIME("togglePinTab"),
+    category: categories.tabs,
+    description: "Pin/unpin current tab",
+  },
+  {
+    alias: "n",
+    callback: () => Normal.nextPage(),
+    category: categories.pageNav,
+    description: "Next page",
+  },
+  {
+    alias: "N",
+    callback: () => Normal.previousPage(),
+    category: categories.pageNav,
+    description: "Previous page",
+  },
+  {
     alias: "u",
     map: "zo",
     category: categories.misc,
