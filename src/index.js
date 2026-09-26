@@ -139,6 +139,14 @@ const main = async () => {
     }
   }
 
+  // Remap all ;-prefixed commands to :
+  const semicolonCmds = [
+    "ap","case","cl","cp","cq","db","dh","di","e","fs","G","gt","gw","i","j",
+    "lt","m","pa","pb","pc","pd","pf","ph","pj","pm","pp","ps","ql","return",
+    "s","t","u","U","v","w","x","yh",
+  ]
+  semicolonCmds.forEach((cmd) => map(`:${cmd}`, `;${cmd}`))
+
   if (conf.searchEngines) {
     registerSearchEngines(conf.searchEngines, conf.searchleader ?? "o")
   }

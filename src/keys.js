@@ -11,6 +11,8 @@ const { Clipboard, Front, Hints, Normal, RUNTIME } = api
 // Remove undesired default mappings
 const unmaps = {
   mappings: [
+    ":",
+    "m",
     "sb",
     "sw",
     "ob",
@@ -187,7 +189,7 @@ maps.global = [
   //   callback:    () => actions.pasteTab(),
   // },
   {
-    alias: ";se",
+    alias: ":se",
     category: categories.settings,
     description: "Edit Settings",
     callback: actions.editSettings,
@@ -264,7 +266,7 @@ maps.global = [
       actions.openLink(actions.getWappalyzerUrl(), { newTab: true }),
   },
   {
-    alias: ";pd",
+    alias: ":pd",
     category: categories.misc,
     description: "Toggle PDF viewer from SurfingKeys",
     callback: actions.togglePdfViewer,
@@ -312,7 +314,19 @@ maps.global = [
     callback: () => Front.showUsage(),
   },
   {
-    alias: ";pp",
+    alias: "m",
+    callback: () => RUNTIME("muteTab"),
+    category: categories.tabs,
+    description: "Mute/unmute current tab",
+  },
+  {
+    alias: "::",
+    category: categories.omnibar,
+    description: "Open commands",
+    callback: () => Front.openOmnibar({ type: "Commands" }),
+  },
+  {
+    alias: ":pp",
     callback: () => RUNTIME("togglePinTab"),
     category: categories.tabs,
     description: "Pin/unpin current tab",

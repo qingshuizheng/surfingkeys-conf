@@ -6,7 +6,7 @@ This is my configuration for the [SurfingKeys](https://github.com/brookhong/Surf
 
 It includes:
 
-- [282 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
+- [285 key mappings for 104 unique websites](#site-specific-key-mappings) which **automate many common actions**.
 - [Omnibar integration with 58 Search Engines and Knowledge Sources](#omnibar-search-engine-integrations), many of which include **inline images** and **instant answers**.
 
 ## Table of Contents
@@ -43,7 +43,8 @@ It includes:
 <tr><td><code>yO</code></td><td>Copy page URL/Title as Org-mode link</td></tr>
 <tr><td><code>yM</code></td><td>Copy page URL/Title as Markdown link</td></tr>
 <tr><td><code>yT</code></td><td>Duplicate current tab (non-active new tab)</td></tr>
-<tr><td><code>;se</code></td><td>Edit Settings</td></tr>
+<tr><td><code>:</code></td><td></td></tr>
+<tr><td><code>:se</code></td><td>Edit Settings</td></tr>
 <tr><td><code>&#x3D;W</code></td><td>Lookup whois information for domain</td></tr>
 <tr><td><code>&#x3D;d</code></td><td>Lookup dns information for domain</td></tr>
 <tr><td><code>&#x3D;D</code></td><td>Lookup all information for domain</td></tr>
@@ -55,7 +56,7 @@ It includes:
 <tr><td><code>&#x3D;o</code></td><td>Show outline.com version of page</td></tr>
 <tr><td><code>&#x3D;bw</code></td><td>Show BuiltWith report for page</td></tr>
 <tr><td><code>&#x3D;wa</code></td><td>Show Wappalyzer report for page</td></tr>
-<tr><td><code>;pd</code></td><td>Toggle PDF viewer from SurfingKeys</td></tr>
+<tr><td><code>:pd</code></td><td>Toggle PDF viewer from SurfingKeys</td></tr>
 <tr><td><code>h</code></td><td>Close tab to left</td></tr>
 <tr><td><code>H</code></td><td>Restore last closed tab</td></tr>
 <tr><td><code>J</code></td><td>Move current tab left</td></tr>
@@ -63,7 +64,9 @@ It includes:
 <tr><td><code>&#39;</code></td><td>Close tab to right</td></tr>
 <tr><td><code>&quot;</code></td><td>Restore last closed tab</td></tr>
 <tr><td><code>?</code></td><td>Show usage</td></tr>
-<tr><td><code>;pp</code></td><td>Pin/unpin current tab</td></tr>
+<tr><td><code>m</code></td><td>Mute/unmute current tab</td></tr>
+<tr><td><code>::</code></td><td>Open commands</td></tr>
+<tr><td><code>:pp</code></td><td>Pin/unpin current tab</td></tr>
 <tr><td><code>n</code></td><td>Next page</td></tr>
 <tr><td><code>N</code></td><td>Previous page</td></tr>
 <tr><td><code>u</code></td><td>Zoom out</td></tr>
