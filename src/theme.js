@@ -4,11 +4,23 @@ const commonStyles = `
     font-size: 12pt;
   }
 
+  #sk_keystroke {
+    right: auto !important;
+    left: 0 !important;
+  }
+
   #sk_keystroke kbd {
     font-family: "Sudo Nerd Font Mono", "Sudo Mono", "Sudo",
       "Input Mono Nerd Font", "Input Mono", "DejaVu Sans Mono", "DejaVu", "Arial",
       sans-serif;
     font-size: 10pt;
+    font-weight: bold;
+    color: #888;
+  }
+
+  #sk_keystroke kbd>.candidates {
+    font-weight: bold;
+    color: #fff;
   }
 
   #sk_omnibarSearchArea {
