@@ -320,7 +320,7 @@ maps.global = [
   },
   {
     alias: "::",
-    callback: () => RUNTIME("closeTab"),
+    map: "x",
     category: categories.tabs,
     description: "Close current tab",
   },
