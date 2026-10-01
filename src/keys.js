@@ -320,6 +320,12 @@ maps.global = [
   },
   {
     alias: "::",
+    callback: () => RUNTIME("closeTab"),
+    category: categories.tabs,
+    description: "Close current tab",
+  },
+  {
+    alias: ":;",
     category: categories.omnibar,
     description: "Open commands",
     callback: () => Front.openOmnibar({ type: "Commands" }),
